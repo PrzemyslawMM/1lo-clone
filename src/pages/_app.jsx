@@ -1,5 +1,3 @@
-function MyApp({ Component }) {
-  return <Component />;
-}
+const MyApp = ({ Component }) => <Component />;
 
 export default MyApp;
