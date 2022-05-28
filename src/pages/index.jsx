@@ -1,12 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function Home() {
+const Wrapper = styled.div`
+  font-size: 35px;
+`;
+
+const Home = () => {
   return (
     <main>
-      <div />
+      <Wrapper>Siema</Wrapper>
     </main>
   );
-}
+};
 
 export default Home;
