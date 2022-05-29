@@ -28,7 +28,7 @@ const Home = () => (
           Zapraszamy na stronę <a href="#">Małopolska Chmura Edukacyjna</a>
         </AnchorToMCE>
         <Image
-          src="https://unsplash.it/400/30"
+          src="https://www.1lo.pl/files/chmura.jpg"
           alt="test img"
           width="400px"
           height="30px"

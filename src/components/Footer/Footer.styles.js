@@ -3,9 +3,16 @@ import styled from 'styled-components';
 export const Patrons = styled.div`
   border-top: 1px solid ${({ theme }) => theme.colors.bottom};
   padding-top: 15px;
-  width: 300px;
-  margin: auto;
-  margin-bottom: 15px;
+  width: 270px;
+  margin: auto auto 15px auto;
+  display: grid;
+  grid-template-columns: 130px 130px;
+  grid-gap: 15px;
+
+  a {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 export const StyledFooter = styled.footer`

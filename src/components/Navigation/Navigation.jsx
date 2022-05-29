@@ -1,47 +1,25 @@
 import React from 'react';
-import styled from 'styled-components';
 import Image from 'next/image';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 0px 38px;
-`;
-
-const StyledNav = styled.nav`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const List = styled.ul`
-  list-style: none;
-  width: 300px;
-  height: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-
-  &:first-child {
-    padding: 15px 15px;
-    background: ${({ theme }) => theme.colors.blue};
-    color: ${({ theme }) => theme.colors.white};
-  }
-`;
-
-const ListItem = styled.li`
-  display: none;
-`;
-
-const Menu = styled.span`
-  margin-left: 10px;
-`;
+import {
+  Image1,
+  Image2,
+  Image3,
+  List,
+  ListItem,
+  Menu,
+  PositionRelative,
+  StyledNav,
+  Wrapper,
+} from './Navigation.styles';
 
 const Navigation = () => {
   return (
     <Wrapper>
-      <img src="https://unsplash.it/300/180" />
+      <PositionRelative>
+        <Image3 src="https://www.1lo.pl/img/header/3.jpg" alt="" />
+        <Image2 src="https://www.1lo.pl/img/header/2.jpg" alt="" />
+        <Image1 src="https://www.1lo.pl/img/header/1.jpg" alt="" />
+      </PositionRelative>
       <StyledNav>
         <List>
           <li>
