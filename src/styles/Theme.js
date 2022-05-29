@@ -11,6 +11,7 @@ const theme = {
   fontSize: {
     sm: '12px',
     m: '14px',
+    normal: '16px',
     b: '20px',
   },
   mq: {

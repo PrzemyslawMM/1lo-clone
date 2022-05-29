@@ -31,7 +31,7 @@ const Home = () => (
           src="https://www.1lo.pl/files/chmura.jpg"
           alt="test img"
           width="400px"
-          height="30px"
+          height="44px"
         />
       </FirstInformation>
       <article>

@@ -1,4 +1,16 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
+
+export const WrapperLinks = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  height: 60px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+`;
 
 export const Wrapper = styled.div`
   display: flex;
@@ -8,73 +20,52 @@ export const Wrapper = styled.div`
 
 export const StyledNav = styled.nav`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 180px;
+  padding-top: 25px;
+  flex-direction: column;
   position: relative;
+  margin-bottom: ${({ isOpen }) => (isOpen ? '700px' : '0')};
 `;
 
 export const List = styled.ul`
   list-style: none;
-  width: 300px;
+  padding: 0;
   height: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  display: ${({ isOpen }) => (isOpen ? 'grid' : 'none')};
+  grid-template-columns: 1fr;
+  font-family: Georgia sans-serif;
+  font-size: ${({ theme }) => theme.fontSize.normal};
+  grid-template-rows: 50px;
+  position: relative;
+`;
 
-  &:first-child {
-    padding: 15px 15px;
-    background: ${({ theme }) => theme.colors.blue};
-    color: ${({ theme }) => theme.colors.white};
+export const Hamburger = styled.div`
+  padding: 15px 15px;
+  background: ${({ theme }) => theme.colors.blue};
+  color: ${({ theme }) => theme.colors.white};
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.lightBlue};
+  }
+
+  &:focus {
+    background: ${({ theme }) => theme.colors.lightBlue};
   }
 `;
 
 export const ListItem = styled.li`
-  display: none;
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+  padding-left: 40px;
+  border-bottom: ${({ theme }) => theme.colors.bottom} 1px solid;
+  background: ${({ theme }) => theme.colors.white};
+  z-index: 99;
+  padding-bottom: 20px;
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 export const Menu = styled.span`
   margin-left: 10px;
-`;
-
-const append = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    display: block;
-  }
-`;
-
-const hide = keyframes`
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-`;
-
-export const Image1 = styled.img`
-  position: absolute;
-  width: 100%;
-  animation: both ${hide} 2s 5s linear;
-`;
-
-export const Image2 = styled.img`
-  position: absolute;
-  width: 100%;
-  animation: both ${append} 2s 5s linear;
-  animation: both ${hide} 2s 12s linear;
-`;
-
-export const Image3 = styled.img`
-  position: absolute;
-  width: 100%;
-  animation: both ${append} 2s 12s linear;
-  animation: both ${hide} 2s 17s linear;
 `;
 
 export const PositionRelative = styled.div`
