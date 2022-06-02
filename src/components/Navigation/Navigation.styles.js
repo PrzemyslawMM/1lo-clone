@@ -10,6 +10,10 @@ export const WrapperLinks = styled.div`
     width: 100%;
     height: 100%;
   }
+
+  ${({ theme }) => theme.mq.bigPhone} {
+    width: 600px;
+  }
 `;
 
 export const Wrapper = styled.div`

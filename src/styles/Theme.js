@@ -15,11 +15,11 @@ const theme = {
     b: '20px',
   },
   mq: {
-    phone: '@media screen and (min-width: 470px) and (max-width: 600px)',
-    bigPhone: '@media screen and (min-width: 600px) and (max-width: 1000px)',
-    smallPC: '@media screen and (min-width: 1000px) and (max-width: 1100px)',
-    PC: '@media screen and (min-width: 1100px) and (max-width: 1600px)',
-    bigPC: '@media screen and (min-width: 1600px)',
+    phone: '@media screen and (min-width: 470px) and (max-width: 675px)',
+    bigPhone: '@media screen and (min-width: 675px) and (max-width: 1075px)',
+    smallPC: '@media screen and (min-width: 1075px) and (max-width: 1175px)',
+    PC: '@media screen and (min-width: 1175px) and (max-width: 1675px)',
+    bigPC: '@media screen and (min-width: 1675px)',
   },
 };
 

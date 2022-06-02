@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import {
   List,
   Logo,
@@ -8,17 +7,16 @@ import {
   StyledFooter,
   Table,
   Title,
+  PatronImage,
 } from './Footer.styles';
 
 const Footer = () => (
   <>
     <Patrons>
       <a href="https://www.agh.edu.pl/" target="_blank" rel="noreferrer">
-        <Image
+        <PatronImage
           src="https://www.1lo.pl/img/recommended/agh.jpg"
           alt="Link do Akademii górniczo hutniczej"
-          width="80px"
-          height="80px"
         />
       </a>
       <a
@@ -26,11 +24,9 @@ const Footer = () => (
         target="_blank"
         rel="noreferrer"
       >
-        <Image
+        <PatronImage
           src="https://www.1lo.pl/img/recommended/kuratorium.jpg"
           alt="Link do Kuratorium Oświaty w Krakowie"
-          width="80px"
-          height="80px"
         />
       </a>
       <a
@@ -38,11 +34,9 @@ const Footer = () => (
         target="_blank"
         rel="noreferrer"
       >
-        <Image
+        <PatronImage
           src="https://www.1lo.pl/img/recommended/samorzad-uczniowski-1lo.jpg"
           alt="Link do Facebooka szkolnego"
-          width="80px"
-          height="80px"
         />
       </a>
       <a
@@ -50,11 +44,10 @@ const Footer = () => (
         target="_blank"
         rel="noreferrer"
       >
-        <Image
+        <PatronImage
           src="https://www.1lo.pl/img/recommended/nad-poziomy_2_0.png"
           alt="Link do Facebooka gazetki szkolnej"
-          width="130px"
-          height="80px"
+          isRectangle
         />
       </a>
       <a
@@ -62,49 +55,46 @@ const Footer = () => (
         target="_blank"
         rel="noreferrer"
       >
-        <Image
+        <PatronImage
           src="https://www.1lo.pl/img/recommended/biblioteka.png"
           alt="Link do Facebooka biblioteki"
-          width="80px"
-          height="80px"
         />
       </a>
       <a href="https://academica.edu.pl" target="_blank" rel="noreferrer">
-        <Image
+        <PatronImage
           src="https://www.1lo.pl/img/recommended/academica.png"
           alt="Link do Cyfrowej wypożyczalnii międzybibliotecznej książek i czasopism naukowych"
-          width="120px"
-          height="80px"
+          isRectangle
         />
       </a>
       <a href="http://staszic.org" target="_blank" rel="noreferrer">
-        <Image
+        <PatronImage
           src="https://www.1lo.pl/img/recommended/sps.png"
           alt="Link do Stowarzyszenia Przyjaciela Staszica"
-          width="120px"
-          height="80px"
+          isRectangle
         />
       </a>
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <a href="#" target="_blank" rel="noreferrer">
-        <Image
+        <PatronImage
           src="https://www.1lo.pl/img/recommended/mapa-szkoly.png"
           alt="Mapa szkoły"
-          width="120px"
-          height="80px"
+          isRectangle
         />
       </a>
-      <Image
-        src="https://www.1lo.pl/img/recommended/dzs.png"
-        alt="Dobrze Zaprojektowana Klasa - Uczestniczymy w programie 'Projekt z klasą'"
-        width="110px"
-        height="80px"
-      />
+      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+      <a>
+        <PatronImage
+          src="https://www.1lo.pl/img/recommended/dzs.png"
+          alt="Dobrze Zaprojektowana Klasa - Uczestniczymy w programie 'Projekt z klasą'"
+          isRectangle
+        />
+      </a>
     </Patrons>
     <StyledFooter>
       <LogoWrapper>
         <Logo>
-          <Image
+          <img
             src="https://www.1lo.pl/img/logo-footer.png"
             width="140px"
             height="130px"
@@ -112,19 +102,19 @@ const Footer = () => (
           />
         </Logo>
         <div>
-          <Image
+          <img
             src="https://www.1lo.pl/img/ico_footer/youtube.png"
             width="45px"
             height="48px"
             alt="YouTube"
           />
-          <Image
+          <img
             src="https://www.1lo.pl/img/ico_footer/fb.png"
             width="45px"
             height="48px"
             alt="Facebook"
           />
-          <Image
+          <img
             src="https://www.1lo.pl/img/ico_footer/bip.png"
             width="45px"
             height="48px"
