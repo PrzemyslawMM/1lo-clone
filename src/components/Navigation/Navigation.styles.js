@@ -113,3 +113,7 @@ export const PatronsWrapper = styled.div`
     display: block;
   }
 `;
+
+export const CarouselImage = styled.img`
+  max-width: 1000px;
+`;

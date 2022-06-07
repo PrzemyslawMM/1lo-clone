@@ -12,12 +12,9 @@ import {
   Hamburger,
   WrapperLinks,
   PatronsWrapper,
+  CarouselImage,
 } from './Navigation.styles';
 import Patrons from '../Patrons/Patrons';
-
-const CarouselImage = styled.img`
-  max-width: 1000px;
-`;
 
 const Navigation = () => {
   const [openState, setOpenState] = useState(false);

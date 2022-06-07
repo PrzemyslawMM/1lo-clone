@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     domains: ['unsplash.it', 'www.1lo.pl'],
   },
+  compiler: {
+    styledComponents: true,
+  },
 };
 
 module.exports = nextConfig;

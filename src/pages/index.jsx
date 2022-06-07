@@ -1,11 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
+import { createClient } from 'contentful';
 import {
   Content,
   FirstInformation,
   AnchorToMCE,
   Article,
-  ArticleImage,
   ArticleText,
   Date,
   H2,
@@ -13,6 +13,13 @@ import {
   TheMostImportantInformation,
   ImgMCE,
 } from '../styles/index.styles';
+
+export const getProps = async () => {
+  const client = createClient({
+    space: process.env.SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  });
+};
 
 const Home = () => {
   const howManyToRender = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
