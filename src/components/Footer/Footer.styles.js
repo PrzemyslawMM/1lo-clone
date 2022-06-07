@@ -1,25 +1,5 @@
 import styled from 'styled-components';
 
-export const Patrons = styled.div`
-  border-top: 1px solid ${({ theme }) => theme.colors.bottom};
-  padding-top: 15px;
-  width: 270px;
-  margin: auto auto 15px auto;
-  display: grid;
-  grid-template-columns: 130px 130px;
-  grid-gap: 15px;
-
-  a {
-    display: flex;
-    justify-content: center;
-  }
-
-  ${({ theme }) => theme.mq.bigPhone} {
-    width: 570px;
-    grid-template-columns: 190px 190px 190px;
-  }
-`;
-
 export const StyledFooter = styled.footer`
   background: ${({ theme }) => theme.colors.blue};
   margin: 0;
@@ -34,6 +14,19 @@ export const StyledFooter = styled.footer`
     display: flex;
     padding-top: 40px;
     padding-left: 60px;
+  }
+
+  ${({ theme }) => theme.mq.smallPC} {
+    display: flex;
+    align-items: center;
+    height: 374px;
+    padding-left: 30px;
+    margin-top: 180px;
+  }
+
+  ${({ theme }) => theme.mq.PC} {
+    justify-content: center;
+    padding-left: 0;
   }
 `;
 
@@ -55,7 +48,7 @@ export const Logo = styled.div`
 
 export const Table = styled.div`
   display: grid;
-  margin: auto auto auto 100px;
+  margin: auto;
   width: 300px;
   grid-template-columns: 150px 130px;
   grid-gap: 15px;
@@ -63,6 +56,16 @@ export const Table = styled.div`
 
   ${({ theme }) => theme.mq.bigPhone} {
     grid-template-columns: 190px 190px;
+    margin: auto auto auto 25px;
+  }
+
+  ${({ theme }) => theme.mq.smallPC} {
+    grid-template-columns: 187px 187px 187px 187px;
+    margin: 0 0 0 30px;
+  }
+
+  ${({ theme }) => theme.mq.PC} {
+    width: 600px;
   }
 `;
 
@@ -88,12 +91,14 @@ export const List = styled.ul`
   }
 `;
 
-export const PatronImage = styled.img`
-  width: ${({ isRectangle }) => (isRectangle ? '120px' : '80px')};
-  height: 80px;
-
-  ${({ theme }) => theme.mq.bigPhone} {
-    width: ${({ isRectangle }) => (isRectangle ? '160px' : '120px')};
-    height: 100px;
+export const WrapperPatrons = styled.div`
+  ${({ theme }) => theme.mq.smallPC} {
+    display: none;
+  }
+  ${({ theme }) => theme.mq.PC} {
+    display: none;
+  }
+  ${({ theme }) => theme.mq.bigPC} {
+    display: none;
   }
 `;

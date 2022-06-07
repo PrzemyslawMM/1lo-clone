@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
+import styled from 'styled-components';
 import {
   List,
   ListItem,
@@ -10,7 +11,13 @@ import {
   Wrapper,
   Hamburger,
   WrapperLinks,
+  PatronsWrapper,
 } from './Navigation.styles';
+import Patrons from '../Patrons/Patrons';
+
+const CarouselImage = styled.img`
+  max-width: 1000px;
+`;
 
 const Navigation = () => {
   const [openState, setOpenState] = useState(false);
@@ -33,9 +40,9 @@ const Navigation = () => {
         transitionTime="3000"
         interval="6000"
       >
-        <img src="https://www.1lo.pl/img/header/1.jpg" alt="" />
-        <img src="https://www.1lo.pl/img/header/2.jpg" alt="" />
-        <img src="https://www.1lo.pl/img/header/3.jpg" alt="" />
+        <CarouselImage src="https://www.1lo.pl/img/header/1.jpg" alt="" />
+        <CarouselImage src="https://www.1lo.pl/img/header/2.jpg" alt="" />
+        <CarouselImage src="https://www.1lo.pl/img/header/3.jpg" alt="" />
       </Carousel>
       <WrapperLinks>
         <a
@@ -115,6 +122,9 @@ const Navigation = () => {
           <ListItem>SPORT</ListItem>
         </List>
       </StyledNav>
+      <PatronsWrapper>
+        <Patrons />
+      </PatronsWrapper>
     </Wrapper>
   );
 };

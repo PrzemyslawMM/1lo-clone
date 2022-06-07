@@ -17,9 +17,9 @@ const theme = {
   mq: {
     phone: '@media screen and (min-width: 470px) and (max-width: 675px)',
     bigPhone: '@media screen and (min-width: 675px) and (max-width: 1075px)',
-    smallPC: '@media screen and (min-width: 1075px) and (max-width: 1175px)',
-    PC: '@media screen and (min-width: 1175px) and (max-width: 1675px)',
-    bigPC: '@media screen and (min-width: 1675px)',
+    smallPC: '@media screen and (min-width: 1075px)',
+    PC: '@media screen and (min-width: 1275px)',
+    bigPC: '@media screen and (min-width: 1600px)',
   },
 };
 

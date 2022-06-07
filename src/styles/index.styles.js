@@ -1,13 +1,9 @@
 import styled from 'styled-components';
 
-export const ArticleImage = styled.img`
-  width: 400px;
-  height: 600px;
-  display: none;
-`;
-
 export const FirstInformation = styled.div`
   margin-top: 50px;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Content = styled.main`
@@ -17,6 +13,14 @@ export const Content = styled.main`
   margin: auto;
   ${({ theme }) => theme.mq.bigPhone} {
     width: 600px;
+  }
+  ${({ theme }) => theme.mq.smallPC} {
+    width: 700px;
+    margin-left: 330px;
+  }
+
+  ${({ theme }) => theme.mq.PC} {
+    margin: auto;
   }
 `;
 
@@ -35,6 +39,9 @@ export const H2 = styled.h2`
   margin: auto;
   ${({ theme }) => theme.mq.bigPhone} {
     width: 500px;
+  }
+  ${({ theme }) => theme.mq.smallPC} {
+    width: 700px;
   }
 `;
 
@@ -84,5 +91,20 @@ export const AnchorToMCE = styled.p`
 
   ${({ theme }) => theme.mq.bigPhone} {
     width: 580px;
+  }
+
+  ${({ theme }) => theme.mq.smallPC} {
+    width: 700px;
+  }
+`;
+
+export const ImgMCE = styled.img`
+  width: 400px;
+  height: 44px;
+
+  ${({ theme }) => theme.mq.smallPC} {
+    width: 600px;
+    height: 66px;
+    align-self: center;
   }
 `;

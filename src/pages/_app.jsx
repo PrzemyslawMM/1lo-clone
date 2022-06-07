@@ -1,10 +1,16 @@
+import Head from 'next/head';
 import LayOut from '../components/LayOut';
 
 const MyApp = ({ Component, pageProps }) => (
-  <LayOut>
-    {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-    <Component {...pageProps} />
-  </LayOut>
+  <>
+    <Head>
+      <link rel="shortcut icon" href="https://www.1lo.pl/img/favicon.ico" />
+    </Head>
+    <LayOut>
+      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+      <Component {...pageProps} />
+    </LayOut>
+  </>
 );
 
 export default MyApp;
