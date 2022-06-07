@@ -27,9 +27,10 @@
             "tabWidth": 2,
             "singleQuote": true
         }],
-        "no-confusing-arrow": ["warn", {"allowParens": false}],
+        "no-confusing-arrow": ["off", {"allowParens": false}],
         "prefer-arrow-callback": ["warn", { "allowUnboundThis": false }],
         "prefer-const": "error",
+        "no-shadow": "off",
         "react/function-component-definition": [
             2,
             {

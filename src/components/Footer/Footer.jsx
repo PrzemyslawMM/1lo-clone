@@ -1,50 +1,45 @@
 import React from 'react';
-import Image from 'next/image';
 import {
   List,
   Logo,
   LogoWrapper,
-  Patrons,
   StyledFooter,
   Table,
   Title,
+  WrapperPatrons,
 } from './Footer.styles';
+import Patrons from '../Patrons/Patrons';
 
 const Footer = () => (
   <>
-    <Patrons>
-      <Image
-        src="https://unsplash.it/400/600"
-        alt="test img"
-        width="400px"
-        height="600px"
-      />
-    </Patrons>
+    <WrapperPatrons>
+      <Patrons />
+    </WrapperPatrons>
     <StyledFooter>
       <LogoWrapper>
         <Logo>
-          <Image
-            src="https://unsplash.it/140/130"
+          <img
+            src="https://www.1lo.pl/img/logo-footer.png"
             width="140px"
             height="130px"
             alt="Logo"
           />
         </Logo>
         <div>
-          <Image
-            src="https://unsplash.it/45/48"
+          <img
+            src="https://www.1lo.pl/img/ico_footer/youtube.png"
             width="45px"
             height="48px"
             alt="YouTube"
           />
-          <Image
-            src="https://unsplash.it/45/48"
+          <img
+            src="https://www.1lo.pl/img/ico_footer/fb.png"
             width="45px"
             height="48px"
             alt="Facebook"
           />
-          <Image
-            src="https://unsplash.it/45/48"
+          <img
+            src="https://www.1lo.pl/img/ico_footer/bip.png"
             width="45px"
             height="48px"
             alt="BIP"

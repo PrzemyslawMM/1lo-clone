@@ -1,13 +1,9 @@
 import styled from 'styled-components';
 
-export const ArticleImage = styled.img`
-  width: 400px;
-  height: 600px;
-  display: none;
-`;
-
 export const FirstInformation = styled.div`
   margin-top: 50px;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Content = styled.main`
@@ -15,6 +11,17 @@ export const Content = styled.main`
   flex-direction: column;
   width: 300px;
   margin: auto;
+  ${({ theme }) => theme.mq.bigPhone} {
+    width: 600px;
+  }
+  ${({ theme }) => theme.mq.smallPC} {
+    width: 700px;
+    margin-left: 330px;
+  }
+
+  ${({ theme }) => theme.mq.PC} {
+    margin: auto;
+  }
 `;
 
 export const TheMostImportantInformation = styled.h1`
@@ -30,6 +37,12 @@ export const H2 = styled.h2`
   text-align: center;
   width: 200px;
   margin: auto;
+  ${({ theme }) => theme.mq.bigPhone} {
+    width: 500px;
+  }
+  ${({ theme }) => theme.mq.smallPC} {
+    width: 700px;
+  }
 `;
 
 export const Article = styled(H2)`
@@ -39,23 +52,6 @@ export const Article = styled(H2)`
   margin: 15px 0 0 0;
   border-bottom: solid ${({ theme }) => theme.colors.bottom} 1px;
   padding-bottom: 5px;
-`;
-
-export const AnchorToMCE = styled.p`
-  text-align: center;
-  font-size: ${({ theme }) => theme.fontSize.sm};
-  width: 280px;
-  margin: 15px auto;
-  font-weight: 600;
-
-  a {
-    text-decoration: none;
-    color: ${({ theme }) => theme.colors.blue};
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 `;
 
 export const Date = styled.p`
@@ -75,4 +71,40 @@ export const MoreButton = styled.a`
   margin-bottom: 50px;
   font-size: ${({ theme }) => theme.fontSize.sm};
   color: ${({ theme }) => theme.colors.lightBlue};
+`;
+
+export const AnchorToMCE = styled.p`
+  text-align: center;
+  font-size: ${({ theme }) => theme.fontSize.sm};
+  width: 280px;
+  margin: 15px auto;
+  font-weight: 600;
+
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.blue};
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ${({ theme }) => theme.mq.bigPhone} {
+    width: 580px;
+  }
+
+  ${({ theme }) => theme.mq.smallPC} {
+    width: 700px;
+  }
+`;
+
+export const ImgMCE = styled.img`
+  width: 400px;
+  height: 44px;
+
+  ${({ theme }) => theme.mq.smallPC} {
+    width: 600px;
+    height: 66px;
+    align-self: center;
+  }
 `;

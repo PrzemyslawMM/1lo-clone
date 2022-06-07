@@ -1,13 +1,5 @@
 import styled from 'styled-components';
 
-export const Patrons = styled.div`
-  border-top: 1px solid ${({ theme }) => theme.colors.bottom};
-  padding-top: 15px;
-  width: 300px;
-  margin: auto;
-  margin-bottom: 15px;
-`;
-
 export const StyledFooter = styled.footer`
   background: ${({ theme }) => theme.colors.blue};
   margin: 0;
@@ -16,6 +8,25 @@ export const StyledFooter = styled.footer`
 
   & ul {
     margin: 0;
+  }
+
+  ${({ theme }) => theme.mq.bigPhone} {
+    display: flex;
+    padding-top: 40px;
+    padding-left: 60px;
+  }
+
+  ${({ theme }) => theme.mq.smallPC} {
+    display: flex;
+    align-items: center;
+    height: 374px;
+    padding-left: 30px;
+    margin-top: 180px;
+  }
+
+  ${({ theme }) => theme.mq.PC} {
+    justify-content: center;
+    padding-left: 0;
   }
 `;
 
@@ -42,6 +53,20 @@ export const Table = styled.div`
   grid-template-columns: 150px 130px;
   grid-gap: 15px;
   color: ${({ theme }) => theme.colors.white};
+
+  ${({ theme }) => theme.mq.bigPhone} {
+    grid-template-columns: 190px 190px;
+    margin: auto auto auto 25px;
+  }
+
+  ${({ theme }) => theme.mq.smallPC} {
+    grid-template-columns: 187px 187px 187px 187px;
+    margin: 0 0 0 30px;
+  }
+
+  ${({ theme }) => theme.mq.PC} {
+    width: 600px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -59,5 +84,21 @@ export const List = styled.ul`
 
   li {
     padding-bottom: 15px;
+  }
+
+  ${({ theme }) => theme.mq.bigPhone} {
+    font-size: ${({ theme }) => theme.fontSize.m};
+  }
+`;
+
+export const WrapperPatrons = styled.div`
+  ${({ theme }) => theme.mq.smallPC} {
+    display: none;
+  }
+  ${({ theme }) => theme.mq.PC} {
+    display: none;
+  }
+  ${({ theme }) => theme.mq.bigPC} {
+    display: none;
   }
 `;
