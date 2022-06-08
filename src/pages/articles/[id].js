@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import { Content } from '../../styles/index.styles';
+import { Content, H2, Date } from '../../styles/index.styles';
 
 const Wrapper = styled.div``;
 
@@ -10,7 +10,7 @@ const ArticlesPageWithID = ({ id }) => {
   const [iteration, setIteration] = useState(1);
   const query = `
           {
-            allArticlesses {
+            allArticlesses(filter: {id: {eq: "${id}"}}) {
               id
               title
               smallDescription
@@ -22,7 +22,6 @@ const ArticlesPageWithID = ({ id }) => {
                 url
               }
             }
-            
           }
       `;
   useEffect(() => {
@@ -43,33 +42,19 @@ const ArticlesPageWithID = ({ id }) => {
       })
       .then(() => {
         console.log(articles);
-        const c = articles.filter((item) => item.id === id);
-        console.log(c);
       })
       .then(() => {
-        switch (iteration) {
-          case 1:
-            setIteration(2);
-            break;
-          case 2:
-            setIteration(3);
-            break;
-          case 3:
-            setIteration(4);
-            break;
-          case 4:
-            setIteration(5);
-            break;
-          default:
-            break;
-        }
+        if (iteration < 5) setIteration((iteration) => iteration + 1);
       })
       .catch((error) => console.log(error));
   }, [iteration]);
 
   return (
     <Wrapper>
-      <Content>dnsiaodnsiao</Content>
+      {console.log(articles)}
+      <Content>
+        <H2>Title</H2>
+      </Content>
     </Wrapper>
   );
 };
