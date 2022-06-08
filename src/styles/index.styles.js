@@ -108,3 +108,7 @@ export const ImgMCE = styled.img`
     align-self: center;
   }
 `;
+
+export const ArticleWrapper = styled.article`
+  margin-top: 30px;
+`;

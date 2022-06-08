@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Error from 'next/error';
 import LayOut from '../components/LayOut';
 
 const MyApp = ({ Component, pageProps }) => (

@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+import axios from 'axios';
+import Link from 'next/link';
 import {
   Content,
   FirstInformation,
@@ -11,10 +13,49 @@ import {
   MoreButton,
   TheMostImportantInformation,
   ImgMCE,
+  ArticleWrapper,
 } from '../styles/index.styles';
 
 const Home = () => {
-  const howManyToRender = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  const [articles, setArticles] = useState([]);
+
+  const query = `
+          {
+            allArticlesses {
+              id
+              title
+              smallDescription
+              descripton
+              _createdAt
+              _status
+              _firstPublishedAt
+              image {
+                url
+              }
+            }
+            
+          }
+      `;
+
+  useEffect(() => {
+    axios
+      .post(
+        'https://graphql.datocms.com/',
+        {
+          query,
+        },
+        {
+          headers: {
+            authorization: `Bearer 18ebccebbc3a3c77ee274fc3efdecb`,
+          },
+        }
+      )
+      .then(({ data: { data } }) => {
+        setArticles(data.allArticlesses);
+      })
+      .catch((error) => console.log(error));
+  }, [query]);
+
   return (
     <>
       <Head>
@@ -34,27 +75,28 @@ const Home = () => {
           </AnchorToMCE>
           <ImgMCE src="https://www.1lo.pl/files/chmura.jpg" alt="" />
         </FirstInformation>
-        {howManyToRender.map((element) => (
-          <article key={element}>
-            <Article>Sukces Filipa Baciaka</Article>
-            <Date>2022-05-26</Date>
-            <ArticleText>
-              Filip Baciak, uczeń klasy trzeciej 1 Liceum Ogólnokształcącego im.
-              Stanisława Staszica w Chrzanowie, został złotym medalistą
-              Europejskiej Olimpiady z Fizyki.
-            </ArticleText>
-            <ArticleText>
-              W Ljubljanie rywalizowały ze sobą reprezentacje z 37 krajów
-              europejskich - prawie 180 uczestników. Filip, po dwóch dniach
-              zmagań z zadaniami teoretycznymi i eksperymentalnymi, znalazł się
-              w gronie 12 najlepszych, młodych fizyków w Europie. Cała
-              reprezentacja Polski spisała się doskonale - pozostali uczniowie
-              zdobyli trzy srebrne medale i jeden brązowy. Ostatecznie, jako
-              zespół w klasyfikacji generalnej zajęli wysokie trzecie miejsce.
-            </ArticleText>
-            <MoreButton>więcej &gt;&gt;</MoreButton>
-          </article>
-        ))}
+        {articles.map((element) => {
+          // eslint-disable-next-line no-underscore-dangle
+          const createdAt = element._createdAt.substring(0, 10);
+          return (
+            <ArticleWrapper key={element.id}>
+              <Article>{element.title}</Article>
+              <Date>{createdAt}</Date>
+              <ArticleText>{element.smallDescription}</ArticleText>
+              {element.descripton === '' ? null : (
+                <MoreButton
+                  as={Link}
+                  href={{
+                    pathname: '/articles',
+                    query: { keyword: element.id },
+                  }}
+                >
+                  więcej &gt;&gt;
+                </MoreButton>
+              )}
+            </ArticleWrapper>
+          );
+        })}
       </Content>
     </>
   );
