@@ -71,6 +71,11 @@ export const MoreButton = styled.a`
   margin-bottom: 50px;
   font-size: ${({ theme }) => theme.fontSize.sm};
   color: ${({ theme }) => theme.colors.lightBlue};
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 export const AnchorToMCE = styled.p`
@@ -107,4 +112,8 @@ export const ImgMCE = styled.img`
     height: 66px;
     align-self: center;
   }
+`;
+
+export const ArticleWrapper = styled.article`
+  margin-top: 30px;
 `;
