@@ -9,6 +9,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: Tahoma,Arial,sans-serif;
     margin: 0;
     color: black;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    
   }
 `;
 
