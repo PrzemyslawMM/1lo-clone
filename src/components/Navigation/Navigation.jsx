@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
-import styled from 'styled-components';
 import {
   List,
   ListItem,

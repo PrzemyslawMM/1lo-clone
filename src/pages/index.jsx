@@ -84,15 +84,14 @@ const Home = () => {
               <Date>{createdAt}</Date>
               <ArticleText>{element.smallDescription}</ArticleText>
               {element.descripton === '' ? null : (
-                <MoreButton
-                  as={Link}
+                <Link
                   href={{
                     pathname: '/articles',
                     query: { keyword: element.id },
                   }}
                 >
-                  więcej &gt;&gt;
-                </MoreButton>
+                  <MoreButton>więcej &gt;&gt;</MoreButton>
+                </Link>
               )}
             </ArticleWrapper>
           );
